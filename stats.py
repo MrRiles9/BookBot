@@ -11,6 +11,13 @@ def get_char_count(words):
     for char in words.lower():
         if char in characters:
             characters[char] += 1
-    return characters        
-        
+    return characters
+
+def get_sorted_char(char_dict):
+    sorted_list = [
+        {"char": char, "count": count}
+        for char, count in char_dict.items() if char.isalpha()
+    ]       
+    sorted_list.sort(key=lambda x: x["count"], reverse=True)
+    return sorted_list    
 
